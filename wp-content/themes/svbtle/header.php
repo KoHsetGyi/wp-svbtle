@@ -12,6 +12,8 @@
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<link rel="shortcut icon" href="<?php echo get_bloginfo('template_directory'); ?>/images/favicon.ico" />
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Vollkorn:700' rel='stylesheet' type='text/css'>
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -54,6 +56,20 @@
 			
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				
+				<?php if ($options['twitter_username']): ?>
+					<li class="link twitter">
+				      <a href="http://www.twitter.com/<?php echo $options['twitter_username'] ?>">
+				      	@<?php echo $options['twitter_username'] ?>
+				      </a>
+				    </li>
+				<?php endif ?>
+				<?php if ($options['github_username']): ?>
+					<li class="link github">
+				      <a href="http://www.github.com/<?php echo $options['github_username'] ?>">
+				      	Github
+				      </a>
+				    </li>
+				<?php endif ?>
 				<?php if ($options['rss-link']): ?>
 					<li class="link feed">
 				      <a href="<?php bloginfo('rss_url'); ?>">feed</a>
