@@ -45,7 +45,7 @@ include('header.php');
 			<div id="post_content_wrapper" style="position:fixed;left:200px;top:75px;bottom:100px;max-height:100%">
 				<textarea name="post_content" id="post_content" placeholder="Write post here" class="content" style="min-height:100%;max-height:100%" tabindex="2"><?php echo $post_content ?></textarea>
 			</div>
-			<div id="preview" style="position:fixed;left:800px;top:48px;bottom:100px;max-height:100%;overflow:scroll">
+			<div id="preview" style="position:fixed;left:800px;top:75px;bottom:100px;max-height:100%;overflow:auto">
 
 			</div>
 		<?php else: ?>
@@ -106,6 +106,14 @@ include('header.php');
 		$('#post_content').bind('input', function() {
 			Editor(document.getElementById("post_content"), document.getElementById("preview"));
 		});
+
+		$('#post_content').bind("scroll",function(){
+			$("#preview").scrollTop($('#post_content').scrollTop());
+		});
+		$('#preview').bind("scroll",function(){
+			$("#post_content").scrollTop($('#preview').scrollTop());
+		});
+
 	});
 </script>
 <script src="js/markdown.js"></script>
