@@ -6,14 +6,16 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
+		<meta name="google-site-verification" content="XVFR9uWbZh5g8pSrIYxLBE2rxmvN62ta155xqcnDT9U" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, minimum-scale=0.5">
-		<title><?php wp_title( 'by', true, 'right' ); bloginfo( 'name' ); ?></title>
+		
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<link rel="shortcut icon" href="<?php echo get_bloginfo('template_directory'); ?>/images/favicon.ico" />
-		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+
+		<!-- load google web fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400' rel='stylesheet' type='text/css'>
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -34,17 +36,20 @@
 				$color = "#ff0000";
 	
 		?>
+		<title><?php wp_title( 'by', true, 'right' ); echo $options['theme_username'] ?></title>
 
 		<style>blockquote {border-color: <?php echo $color ?>;}figure.logo, aside.alsoby li a:hover, aside.kudo.complete span.circle {background-color: <?php echo $color ?>;}section.preview header#begin h2,ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {color: <?php echo $color ?>;}ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {border-color: <?php echo $color ?>;}::-moz-selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}::selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;} 
 		ul#user_nav li a:hover{color:#FFF; background-color: <?php echo $color ?>; border-color:<?php echo $color ?>;} #searchform #s:hover , #searchform #s:focus {border-color:  <?php echo $color ?>;} 
 		</style>
 		
+
+
 		<?php wp_head();  ?>
 
 		
 	</head>
 	<body <?php body_class(); ?>>
-
+		<a href="https://plus.google.com/112344183949482000556" rel="publisher" style="display:none">Google+</a>
 		<header id="sidebar">
 			<figure class="logo medium">
 				<a href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
